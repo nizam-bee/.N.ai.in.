@@ -1,33 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>n.ai.in - Smart Search</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <title>n.ai.in – Smarter than Google</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2rem;
+    }
+    header p {
+      font-size: 1rem;
+      color: #555;
+    }
+    form {
+      margin: 2rem 0;
+    }
+    input {
+      padding: 0.8rem;
+      width: 50%;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.8rem 1.2rem;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    nav a {
+      color: #333;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div id="logo">🇮🇳 n.ai.in</div>
-    <div id="signin">Sign In</div>
+    <h1>n.<span style="color:orange;">a</span>.<span style="color:blue;">i</span>.in</h1>
+    <p>Smarter than Google • Powered by AI</p>
   </header>
+
   <main>
-    <div id="search-section">
-      <input type="text" id="search-box" placeholder="Search smarter..." />
-      <button id="search-btn">🔍</button>
-      <button id="voice-btn">🎤</button>
-      <button id="camera-btn">📷</button>
-    </div>
-    <div id="results"></div>
-    <section id="news-feed">
-      <h2>Latest News</h2>
-      <ul>
-        <li>News Item 1</li>
-        <li>News Item 2</li>
-      </ul>
-    </section>
+    <form id="searchForm">
+      <input type="text" id="query" placeholder="Search with AI..." />
+      <button type="submit">Search</button>
+    </form>
+    <div id="result"></div>
   </main>
+
+  <footer>
+    <nav>
+      <a href="#">🏠 Home</a>
+      <a href="#">🔍 Search</a>
+      <a href="#">🔔 Notifications</a>
+      <a href="#">📋 Activity</a>
+      <a href="#">🧠 AI Codes</a>
+    </nav>
+    <p>© 2025 n.ai.in – Smarter than Google</p>
+  </footer>
+
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const query = document.getElementById('query').value;
+      document.getElementById('result').innerHTML = `🔎 Searching for "<b>${query}</b>"...<br><br><i>(This is a mock AI result)</i>`;
+      // Later: Replace with real fetch() to Supabase or OpenAI
+    });
+  </script>
 </body>
 </html>
